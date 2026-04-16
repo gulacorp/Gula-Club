@@ -326,11 +326,91 @@
             box-shadow: none;
         }
 
+        button, .btn-primary, .btn-secondary, .btn-outline, .btn-link {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .fast-click {
+            transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+            will-change: transform, opacity;
+        }
+
         .btn-outline {
             background: transparent;
             border: 2px solid var(--accent-white);
             margin-bottom: 15px;
             box-shadow: none;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .card {
+                padding: 24px 18px;
+                border-radius: 22px;
+                max-width: 430px;
+            }
+
+            .gula-title {
+                font-size: 2rem;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            p.subtitle {
+                font-size: 0.82rem;
+                margin-bottom: 18px;
+            }
+
+            .input-group,
+            .phone-input-wrapper,
+            .privacy-section,
+            .modal-actions {
+                margin-bottom: 10px;
+            }
+
+            .phone-input-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            #countryCode {
+                flex: 1 1 auto;
+                width: 100%;
+                padding: 14px 18px 14px 14px !important;
+            }
+
+            #tel {
+                width: 100%;
+            }
+
+            input,
+            select,
+            button {
+                font-size: 0.95rem;
+                padding: 14px 16px;
+            }
+
+            .coupon-box {
+                padding: 22px 16px;
+            }
+
+            .modal-content {
+                margin: 8% auto;
+                padding: 24px;
+                max-width: 480px;
+            }
+
+            .back-arrow {
+                top: 14px;
+                left: 14px;
+                font-size: 1.6rem;
+            }
         }
 
         .btn-outline:hover {
@@ -558,7 +638,16 @@
         }
 
         .active-mission {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+        }
+
+        .active-mission summary {
+            color: var(--gula-orange);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 900;
+            cursor: pointer;
         }
 
         .active-mission h3 {
@@ -686,10 +775,16 @@
         }
 
         .next-rewards {
-            background: rgba(20, 20, 20, 0.8);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+        }
+
+        .next-rewards summary {
+            color: var(--gula-orange);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 900;
+            cursor: pointer;
         }
 
         .upcoming-text {
@@ -710,6 +805,89 @@
             border-left: 3px solid var(--gula-orange);
             border-radius: 8px;
             color: #ddd;
+            font-size: 0.95rem;
+        }
+
+        .points-system-section {
+            margin-bottom: 20px;
+        }
+
+        .points-system-section summary {
+            color: var(--gula-orange);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        .points-explanation {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 88, 0, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid var(--gula-orange);
+        }
+
+        .points-explanation p {
+            margin: 8px 0;
+            color: #ddd;
+            font-size: 0.95rem;
+        }
+
+        .menu-points h4 {
+            color: var(--gula-orange);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .menu-category {
+            margin-bottom: 20px;
+        }
+
+        .menu-category h5 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--gula-orange);
+            padding-bottom: 5px;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(30, 30, 30, 0.6);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 88, 0, 0.3);
+        }
+
+        .item-name {
+            flex: 1;
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        .item-price {
+            color: var(--gula-orange);
+            font-weight: 700;
+            margin-right: 15px;
+        }
+
+        .item-points {
+            color: #FFD700;
+            font-weight: 900;
             font-size: 0.95rem;
         }
 
@@ -1060,6 +1238,17 @@
             margin-bottom: 5px;
         }
 
+        .modal-actions {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .modal-actions button {
+            min-width: 160px;
+        }
+
         .close-modal {
             position: absolute;
             top: 15px;
@@ -1106,6 +1295,32 @@
             color: #ccc;
             font-size: 0.8rem;
             margin-bottom: 10px;
+        }
+
+        .mission-type-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .mission-type-badge.semanales {
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+            color: black;
+        }
+
+        .mission-type-badge.flash {
+            background: linear-gradient(135deg, #FF1744, #FF6B35);
+            color: white;
+        }
+
+        .mission-type-badge.comunidad {
+            background: linear-gradient(135deg, #00E676, #00C853);
+            color: black;
         }
 
         .btn-mission {
@@ -1183,6 +1398,210 @@
         @keyframes confettiFall {
             0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
             100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* VOTACIONES */
+        .voting-section {
+            margin-bottom: 20px;
+        }
+        .voting-section summary {
+            color: var(--gula-orange);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+        .voting-section h3 {
+            color: var(--gula-orange);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .voting-card {
+            background: rgba(30, 30, 30, 0.8);
+            border: 2px solid var(--gula-orange);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        .voting-card h4 {
+            color: white;
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+        .voting-deadline {
+            color: #ccc;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+        .voting-options {
+            margin-bottom: 20px;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .option-name {
+            flex: 1;
+            color: white;
+            font-size: 0.9rem;
+        }
+        .progress-bar {
+            flex: 2;
+            height: 10px;
+            background: #333;
+            border-radius: 5px;
+            margin: 0 10px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--gula-orange);
+            border-radius: 5px;
+        }
+        .percentage {
+            color: var(--gula-orange);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .btn-vote {
+            background: var(--gula-orange);
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            width: 100%;
+        }
+        .btn-vote:hover {
+            background: #e67300;
+        }
+
+        .voting-options {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 16px 18px;
+            border: 2px solid #1f1f1f;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option:hover {
+            border-color: var(--gula-orange);
+            background: rgba(255, 88, 0, 0.08);
+        }
+        .option.selected {
+            border-color: var(--gula-orange);
+            background: rgba(255, 88, 0, 0.16);
+        }
+        .option-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+        .option-marker {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #666;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+        }
+        .option.selected .option-marker {
+            border-color: var(--gula-orange);
+            background: var(--gula-orange);
+        }
+        .option-marker::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: transparent;
+            transition: background 0.2s ease;
+        }
+        .option.selected .option-marker::after {
+            background: black;
+        }
+        .option-name {
+            color: white;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+        .option .percentage {
+            color: var(--gula-orange);
+            font-weight: 800;
+            min-width: 36px;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        /* DESPLEGABLES */
+        details {
+            border: 2px solid var(--gula-orange);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            background: rgba(30, 30, 30, 0.8);
+        }
+        summary {
+            padding: 15px 20px;
+            cursor: pointer;
+            color: var(--gula-orange);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 900;
+            list-style: none;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary::after {
+            content: '▼';
+            float: right;
+            color: var(--gula-orange);
+            font-size: 0.8rem;
+        }
+        details[open] summary::after {
+            content: '▲';
+        }
+        details > div {
+            padding: 0 20px 20px;
+        }
+
+        /* LOGROS Y RECOMPENSAS */
+        .achievements-section {
+            margin-bottom: 20px;
+        }
+        
+        .achievements-section summary {
+            color: var(--gula-orange);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+        
+        .achievements-section h4 {
+            color: var(--gula-orange);
+            font-size: 1rem;
+            margin: 20px 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -1497,9 +1916,9 @@
             <p style="font-size: 1.1rem; color: white; margin-bottom: 15px; font-weight: 700; font-family: 'Inter', Arial, sans-serif;">✓ Email enviado a:</p>
             <p id="emailDisplay" style="font-size: 0.95rem; color: var(--gula-orange); margin-bottom: 25px; font-weight: 700; word-break: break-all; font-family: 'Inter', Arial, sans-serif;">loading...</p>
             <p style="font-size: 0.85rem; color: #ccc; font-family: 'Inter', Arial, sans-serif; line-height: 1.6;">
-                Alli recibiras tu codigo en tu inbox. El codigo llega solo a tu correo.
+                ¡Felicitaciones! Acceso al grupo WhatsApp + 20% descuento en tu próximo pedido
             </p>
-            <p style="font-size: 0.7rem; color: #888; margin-top: 20px; font-family: 'Inter', Arial, sans-serif;">*Válido en tu próximo pedido. Solo en sala, no aplica a delivery.</p>
+            <p style="font-size: 0.7rem; color: #888; margin-top: 20px; font-family: 'Inter', Arial, sans-serif;">*Válido solo en sala, no aplica a delivery.</p>
         </div>
 
         <div style="margin-top: 30px;">
@@ -1572,29 +1991,13 @@
             </div>
         </div>
 
-        <!-- TABLA DE PUNTOS INICIALES -->
-        <div class="points-earned">
-            <h3>Puntos Ganados</h3>
-            <div class="points-list">
-                <div class="point-item">
-                    <span class="point-label">✓ Registro en Club Gula</span>
-                    <span class="point-value">+22 pts</span>
-                </div>
-                <div class="point-item">
-                    <span class="point-label">✓ Confirmación Teléfono</span>
-                    <span class="point-value">+22 pts</span>
-                </div>
-                <div class="point-item">
-                    <span class="point-label">✓ Follow @thegulacorp</span>
-                    <span class="point-value">+33 pts</span>
-                </div>
-            </div>
-        </div>
+
 
         <!-- CLASIFICACIONES -->
         <div class="classification-section">
-            <h3>Clasificaciones GULA CREW</h3>
-            <div class="classification-list">
+            <details open>
+                <summary>Clasificaciones GULA CREW</summary>
+                <div class="classification-list">
                 <div class="classification-item">
                     <span style="font-weight: 900;">NEOPHYTE</span>
                     0 a 249 pts — Entrada al Club y beneficios iniciales.
@@ -1612,11 +2015,13 @@
                     +1200 pts — Nivel VIP con ventajas máximas.
                 </div>
             </div>
+            </details>
         </div>
 
         <!-- MISIÓN ACTIVA -->
         <div class="active-mission">
-            <h3>MISIÓN ACTIVA</h3>
+            <details>
+                <summary>MISIÓN ACTIVA</summary>
             <div class="mission-card">
                 <div class="mission-title">Ven 2 veces esta semana</div>
                 <div class="mission-reward">+60 pts</div>
@@ -1625,11 +2030,59 @@
                     <span class="progress-label">Progreso: 1/2</span>
                 </div>
             </div>
+            </details>
         </div>
 
-        <!-- RECOMPENSAS DISPONIBLES -->
-        <div class="rewards-section">
-            <h3>RECOMPENSAS DISPONIBLES</h3>
+        <!-- DECISIONES DE LA CREW -->
+        <div class="voting-section">
+            <details>
+                <summary>DECISIONES DE LA CREW</summary>
+            <div class="voting-card">
+                <h4>¿Cuál será el próximo side Gula?</h4>
+                <p class="voting-deadline">Finaliza: 30 Abril 2026</p>
+                <div class="voting-options">
+                    <div class="option" data-option="Mac and Cheese" onclick="selectVoteOption(this)">
+                        <div class="option-left">
+                            <span class="option-marker"></span>
+                            <span class="option-name">Mac and Cheese</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                        <span class="percentage">45%</span>
+                    </div>
+                    <div class="option" data-option="Bacon" onclick="selectVoteOption(this)">
+                        <div class="option-left">
+                            <span class="option-marker"></span>
+                            <span class="option-name">Bacon</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 30%"></div>
+                        </div>
+                        <span class="percentage">30%</span>
+                    </div>
+                    <div class="option" data-option="Fritas Cacio e Pepe" onclick="selectVoteOption(this)">
+                        <div class="option-left">
+                            <span class="option-marker"></span>
+                            <span class="option-name">Fritas Cacio e Pepe</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%"></div>
+                        </div>
+                        <span class="percentage">25%</span>
+                    </div>
+                </div>
+                <button class="btn-vote" onclick="submitVote()">VOTAR</button>
+            </div>
+            </details>
+        </div>
+
+        <!-- LOGROS Y RECOMPENSAS -->
+        <div class="achievements-section">
+            <details>
+                <summary>LOGROS Y RECOMPENSAS</summary>
+            
+            <h4>Recompensas Disponibles</h4>
             <div class="reward-card">
                 <div class="reward-header">
                     <span class="reward-name">20% OFF en próxima compra</span>
@@ -1647,11 +2100,29 @@
                 <p class="reward-description">Contenido interno y exclusivo</p>
                 <button class="btn-claim" onclick="claimReward('canal')">ACCEDER</button>
             </div>
+            
+            <h4>Histórico de Puntos, Misiones y Objetivos Acumulados</h4>
+            <div class="points-list">
+                <div class="point-item">
+                    <span class="point-label">✓ Registro en Club Gula</span>
+                    <span class="point-value">+22 pts</span>
+                </div>
+                <div class="point-item">
+                    <span class="point-label">✓ Confirmación Teléfono</span>
+                    <span class="point-value">+22 pts</span>
+                </div>
+                <div class="point-item">
+                    <span class="point-label">✓ Follow @thegulacorp</span>
+                    <span class="point-value">+33 pts</span>
+                </div>
+            </div>
+            </details>
         </div>
 
         <!-- PRÓXIMAS RECOMPENSAS -->
         <div class="next-rewards">
-            <h3>PRÓXIMAS RECOMPENSAS</h3>
+            <details>
+                <summary>PRÓXIMAS RECOMPENSAS</summary>
             <p class="upcoming-text">Alcanza el nivel CREW para desbloquear:</p>
             <div class="reward-preview">
                 <div class="preview-item">Reward mensual fijo (2x1)</div>
@@ -1676,9 +2147,230 @@
                 <div class="preview-item">Charla con founder y equipo</div>
                 <div class="preview-item">Identidad Founders (20% OFF de por vida)</div>
             </div>
+            </details>
         </div>
 
-        <!-- CÓDIGO DE MIEMBRO -->
+        <!-- SISTEMA DE PUNTOS -->
+        <div class="points-system-section">
+            <details>
+                <summary>SISTEMA DE PUNTOS</summary>
+            <div class="points-explanation">
+                <p><strong>¿Cómo ganar puntos?</strong></p>
+                <p>Cada euro (€) gastado en nuestros productos equivale a <strong>3 puntos</strong> en tu cuenta Gula Crew.</p>
+                <p>Por ejemplo: Si gastas 10€, obtienes 30 puntos.</p>
+            </div>
+            
+            <h4>Puntos Sociales</h4>
+            <div class="points-list">
+                <div class="point-item">
+                    <span class="point-label">Seguirnos en Insta</span>
+                    <span class="point-value">+50 pts</span>
+                </div>
+                <div class="point-item">
+                    <span class="point-label">Reel</span>
+                    <span class="point-value">+40 pts</span>
+                </div>
+                <div class="point-item">
+                    <span class="point-label">Story</span>
+                    <span class="point-value">+30 pts</span>
+                </div>
+                <div class="point-item">
+                    <span class="point-label">Repost</span>
+                    <span class="point-value">+20 pts</span>
+                </div>
+            </div>
+            
+            <div class="menu-points">
+                <h4>Valor en Puntos de Nuestra Carta</h4>
+                
+                <div class="menu-category">
+                    <h5>Entrantes</h5>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <span class="item-name">Alitas BBK</span>
+                            <span class="item-price">8,50€</span>
+                            <span class="item-points">26 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Pollo frito al estilo Gula</span>
+                            <span class="item-price">9,90€</span>
+                            <span class="item-points">30 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Nuestras fritas</span>
+                            <span class="item-price">3,20€</span>
+                            <span class="item-points">10 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Fritas Buffalo Ranch</span>
+                            <span class="item-price">10,50€</span>
+                            <span class="item-points">32 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Fritas Chilli con Carne</span>
+                            <span class="item-price">9,50€</span>
+                            <span class="item-points">29 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Fritas Trufadas</span>
+                            <span class="item-price">9,50€</span>
+                            <span class="item-points">29 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Fritas Bacon y Queso</span>
+                            <span class="item-price">9,50€</span>
+                            <span class="item-points">29 pts</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <h5>Burgers</h5>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <span class="item-name">Cheese JR</span>
+                            <span class="item-price">6,95€</span>
+                            <span class="item-points">21 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Gula Cheeseburger</span>
+                            <span class="item-price">10,90€</span>
+                            <span class="item-points">33 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">The Sinner Burger</span>
+                            <span class="item-price">12,90€</span>
+                            <span class="item-points">39 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">BBK</span>
+                            <span class="item-price">12,90€</span>
+                            <span class="item-points">39 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Bohemian Chicken</span>
+                            <span class="item-price">12,90€</span>
+                            <span class="item-points">39 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Cheese Bacon V</span>
+                            <span class="item-price">12,90€</span>
+                            <span class="item-points">39 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Que Chille</span>
+                            <span class="item-price">12,90€</span>
+                            <span class="item-points">39 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Pope's Burger</span>
+                            <span class="item-price">12,90€</span>
+                            <span class="item-points">39 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">The Trufa Corp</span>
+                            <span class="item-price">13,90€</span>
+                            <span class="item-points">42 pts</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <h5>Gula Sliders</h5>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <span class="item-name">Golden Slider</span>
+                            <span class="item-price">7,90€</span>
+                            <span class="item-points">24 pts</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <h5>Postres</h5>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <span class="item-name">Cheesecake Lotus y Dulce de Leche</span>
+                            <span class="item-price">5,50€</span>
+                            <span class="item-points">17 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Cheesecake de Galleta Dinosaurs</span>
+                            <span class="item-price">5,50€</span>
+                            <span class="item-points">17 pts</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <h5>Salsas</h5>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <span class="item-name">Salsa Trufada</span>
+                            <span class="item-price">2,00€</span>
+                            <span class="item-points">6 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Salsa Gula</span>
+                            <span class="item-price">1,80€</span>
+                            <span class="item-points">5 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Salsa queen</span>
+                            <span class="item-price">1,80€</span>
+                            <span class="item-points">5 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Salsa mayonesa</span>
+                            <span class="item-price">1,80€</span>
+                            <span class="item-points">5 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Salsa spicy V</span>
+                            <span class="item-price">1,80€</span>
+                            <span class="item-points">5 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Salsa buffalo</span>
+                            <span class="item-price">1,80€</span>
+                            <span class="item-points">5 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Ketchup Gula</span>
+                            <span class="item-price">1,50€</span>
+                            <span class="item-points">5 pts</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <h5>Combos</h5>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <span class="item-name">The Sinner Combo</span>
+                            <span class="item-price">12,90€</span>
+                            <span class="item-points">39 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">The Black Side Combo</span>
+                            <span class="item-price">13,90€</span>
+                            <span class="item-points">42 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">The Pleasure for 2</span>
+                            <span class="item-price">29,90€</span>
+                            <span class="item-points">90 pts</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">The Sin City Combo</span>
+                            <span class="item-price">69,90€</span>
+                            <span class="item-points">210 pts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </details>
+        </div>
         <div style="background: rgba(255, 88, 0, 0.1); border: 2px solid #FF5800; padding: 20px; border-radius: 15px; margin-bottom: 20px; text-align: center;">
             <p style="font-size: 0.85rem; color: #999; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 10px 0;">Tu Código de Miembro</p>
             <p id="memberCodeDisplay" style="font-size: 1.8rem; color: #FF5800; font-weight: 900; letter-spacing: 2px; margin: 0;">GULA-XX0000</p>
@@ -1724,6 +2416,18 @@
         
         <div id="eventsList" style="max-height: 400px; overflow-y: auto;">
             <!-- Se genera dinámicamente -->
+        </div>
+    </div>
+</div>
+
+<!-- Modal de email duplicado -->
+<div id="duplicateEmailModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeDuplicateEmailModal()">&times;</span>
+        <h2>¡Email ya registrado!</h2>
+        <p id="duplicateEmailModalMessage">El email ya está registrado en el sistema. Por favor usa otro email para continuar.</p>
+        <div class="modal-actions">
+            <button class="btn-primary" onclick="confirmDuplicateEmailModal()">Entendido</button>
         </div>
     </div>
 </div>
@@ -1840,97 +2544,12 @@
         <span class="close-modal" onclick="closeMissionsModal()">&times;</span>
         <h2>MISIONES DISPONIBLES</h2>
         
-        <div class="mission-category">
-            <h3>MISIONES SEMANALES</h3>
-            
-            <div class="mission-item">
-                <h4>Ven de Lunes a Jueves</h4>
-                <p class="mission-description">Visita nuestras tiendas de lunes a jueves para completar la misión.</p>
-                <div class="mission-reward">+60 pts</div>
-                <div class="mission-progress">Progreso: 0/1</div>
-                <button class="btn-mission" onclick="completeMission('visit_week')">Marcar como completada</button>
-            </div>
-            
-            <div class="mission-item">
-                <h4>Sube 1 storie con el nuevo producto</h4>
-                <p class="mission-description">Comparte una story etiquetando @thegulacorp con nuestro nuevo producto.</p>
-                <div class="mission-reward">+40 pts</div>
-                <div class="mission-progress">Progreso: 0/1</div>
-                <button class="btn-mission" onclick="completeMission('story_product')">Marcar como completada</button>
-            </div>
-            
-            <div class="mission-item">
-                <h4>Trae 1 amigo</h4>
-                <p class="mission-description">Invita a un amigo a unirse al Club Gula y gana puntos cuando se registre.</p>
-                <div class="mission-reward">+80 pts</div>
-                <div class="mission-progress">Progreso: 0/1</div>
-                <button class="btn-mission" onclick="completeMission('bring_friend')">Marcar como completada</button>
-            </div>
+        <div id="missionsList">
+            <!-- Misiones se cargarán dinámicamente desde Google Sheets -->
+            <p style="text-align: center; color: #ccc;">Cargando misiones...</p>
         </div>
-        
-        <div class="mission-category">
-            <h3>MISIONES FLASH</h3>
-            
-            <div class="mission-item">
-                <h4>Hoy: +20 pts extra si vienes</h4>
-                <p class="mission-description">Visita cualquier tienda Gula hoy y obtén puntos extra.</p>
-                <div class="mission-reward">+20 pts</div>
-                <div class="mission-progress">Progreso: 0/1</div>
-                <button class="btn-mission" onclick="completeMission('visit_today')">Marcar como completada</button>
-            </div>
-            
-            <div class="mission-item">
-                <h4>Este finde: bonus consumo</h4>
-                <p class="mission-description">Ven este fin de semana y obtén bonus en tu consumo.</p>
-                <div class="mission-reward">Bonus consumo</div>
-                <div class="mission-progress">Progreso: 0/1</div>
-                <button class="btn-mission" onclick="completeMission('weekend_bonus')">Marcar como completada</button>
-            </div>
-            
-            <div class="mission-item">
-                <h4>Producto nuevo: pruébalo</h4>
-                <p class="mission-description">Prueba nuestro nuevo producto y gana puntos extra.</p>
-                <div class="mission-reward">+puntos</div>
-                <div class="mission-progress">Progreso: 0/1</div>
-                <button class="btn-mission" onclick="completeMission('try_new_product')">Marcar como completada</button>
-            </div>
-        </div>
-        
-        <div class="mission-category">
-            <h3>MISIONES DE COMUNIDAD</h3>
-            
-            <div class="mission-item">
-                <h4>Vota nuevo producto</h4>
-                <p class="mission-description">Participa en la votación de nuestro próximo producto.</p>
-                <div class="mission-reward">+20 pts</div>
-                <div class="mission-progress">Progreso: 0/1</div>
-                <button class="btn-mission" onclick="completeMission('vote_product')">Marcar como completada</button>
-            </div>
-            
-            <div class="mission-item">
-                <h4>Feedback producto</h4>
-                <p class="mission-description">Danos tu opinión sobre nuestros productos y experiencia.</p>
-                <div class="mission-reward">+30 pts</div>
-                <div class="mission-progress">Progreso: 0/1</div>
-                <button class="btn-mission" onclick="completeMission('feedback')">Marcar como completada</button>
-            </div>
-            
-            <div class="mission-item">
-                <h4>Participa en evento</h4>
-                <p class="mission-description">Asiste a uno de nuestros eventos exclusivos.</p>
-                <div class="mission-reward">+60 pts</div>
-                <div class="mission-progress">Progreso: 0/1</div>
-                <button class="btn-mission" onclick="completeMission('attend_event')">Marcar como completada</button>
-            </div>
-            
-            <div class="mission-item">
-                <h4>Valóranos en Google</h4>
-                <p class="mission-description">Deja una reseña en Google sobre tu experiencia en Gula.</p>
-                <div class="mission-reward">+33 pts</div>
-                <div class="mission-progress">Progreso: 0/1</div>
-                <button class="btn-mission" onclick="completeMission('google_review')">Marcar como completada</button>
-            </div>
-        </div>
+    </div>
+</div>
 <div id="profileModal" class="modal">
     <div class="modal-content">
         <span class="close-modal" onclick="closeProfileModal()">&times;</span>
@@ -1990,38 +2609,28 @@
     </div>
 </div>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3.11.0/dist/build/email.min.js"></script>
+
     <script>
-    // EmailJS Configuration - Load from reliable CDN
-    const EMAILJS_PUBLIC_KEY = 'rHBhgveva4YlEHbGz';
-    const EMAILJS_SERVICE_ID = 'service_ufq5lnx';
-    const EMAILJS_TEMPLATE_ID = 'template_fszqwzs';
+    // Gmail Configuration - Emails sent directly via Google Apps Script
+    // No EmailJS needed - using GmailApp from Google Apps Script for direct Gmail sending
     
-    // Try to initialize EmailJS
-    function initEmailJS() {
-        if (typeof emailjs !== 'undefined' && emailjs.init) {
-            try {
-                emailjs.init(EMAILJS_PUBLIC_KEY);
-                console.log('✓ EmailJS ready');
-                return true;
-            } catch (e) {
-                console.log('EmailJS init error:', e);
-                return false;
-            }
+    // Email notifications are now handled server-side by Google Apps Script:
+    // - Welcome emails sent automatically after registration
+    // - Promotional emails can be sent via sendPromotionalEmail() function in Apps Script
+    // - All emails use the Gmail account associated with the Apps Script project
+
+    function setCrewFormLoading(isLoading) {
+        const submitBtn = document.querySelector('#crewForm button[type="submit"]');
+        if (!submitBtn) return;
+        if (!submitBtn.dataset.originalText) {
+            submitBtn.dataset.originalText = submitBtn.innerText;
         }
-        return false;
+        submitBtn.disabled = isLoading;
+        submitBtn.innerText = isLoading ? 'Cargando...' : submitBtn.dataset.originalText;
     }
-    
-    // Try on multiple events
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initEmailJS);
-    } else {
-        initEmailJS();
-    }
-    window.addEventListener('load', initEmailJS);
     
     // Default Webhook URL (Google Apps Script)
-    const SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyDtJQA1yzuPrs03N8jvlDR6KyFoQQqMeg7y1skIQ_hBXUjlCQvgnj5jwbvJag2OGJaIw/exec';
+    const SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbw8l8Gaa_SK9KlPD2DjdM-Y-wwnKteU3nPils8Cmdnyi_2BpLFMr21E7fqM1_9cYN85jw/exec';
 
     // Resolve webhook URL: priority -> `webhook` query param -> saved admin webhook -> default SHEET_WEBAPP_URL
     function getWebhookUrl(){
@@ -2033,13 +2642,22 @@
     }
 
     // Base de datos local simulada
-    let database = JSON.parse(localStorage.getItem('gula_crew_db')) || [];
+    let database = [];
     let currentSession = {};
     let followedInsta = false;
+    let sheetLeaderboard = [];
+    let sheetMissions = {};
+    let sheetEvents = [];
     const isAdmin = new URLSearchParams(window.location.search).get('admin') === '1';
 
         // If admin mode enabled (append ?admin=1), show admin controls and webhook editor
         document.addEventListener('DOMContentLoaded', ()=>{
+                // LIMPIAR DATOS LOCALES - siempre usa Google Sheet como fuente de verdad
+                localStorage.removeItem('gula_crew_db');
+                localStorage.removeItem('currentUser');
+                database = [];
+                console.log('✅ localStorage limpiado - usando Google Sheet');
+                
                 if (isAdmin) {
                         const panel = document.getElementById('adminPanel');
                         if (panel) {
@@ -2056,6 +2674,7 @@
                                         <div style="margin-top:8px">
                                             <button onclick="exportToExcel()" style="background: #222; font-size: 0.7rem; padding: 10px;">📊 EXPORTAR BASE DE DATOS (EXCEL)</button>
                                             <button onclick="syncAllToSheet()" style="background:#222; font-size:0.7rem; padding:10px; margin-top:8px;">⬆️ SINCRONIZAR TODO AL WEBHOOK</button>
+                                            <button onclick="clearAllLocalStorage()" style="background:#8b0000; font-size:0.7rem; padding:10px; margin-top:8px; color:#fff;">🗑️ LIMPIAR TODO (BORRAR DATOS LOCALES)</button>
                                         </div>
                                     </div>`;
                         }
@@ -2070,6 +2689,21 @@
         }
         function clearWebhook(){ localStorage.removeItem('gula_webhook_url'); alert('Webhook borrado. Se usará la URL por defecto.'); }
 
+        function clearAllLocalStorage() {
+            if (confirm('⚠️ ATENCIÓN: Esto borrará TODOS los datos locales incluyendo:\n- Base de datos de usuarios\n- Usuario actual\n- Webhook URL\n- Todas las cookies locales\n\n¿Estás seguro?')) {
+                // Clear all localStorage items
+                localStorage.removeItem('gula_crew_db');
+                localStorage.removeItem('currentUser');
+                localStorage.removeItem('gula_webhook_url');
+                
+                // Also clear sessionStorage if used
+                sessionStorage.clear();
+                
+                alert('✅ Todos los datos locales han sido borrados. Puedes volver a registrarte con tus correos.');
+                location.reload();
+            }
+        }
+
     function saveToDB(user) {
         database.push(user);
         localStorage.setItem('gula_crew_db', JSON.stringify(database));
@@ -2083,6 +2717,50 @@
             alert('Base de datos local borrada completamente');
             location.reload();
         }
+    }
+
+    // Load data from Google Sheets
+    async function loadSheetData() {
+        try {
+            const url = getWebhookUrl();
+            
+            // Load leaderboard
+            const leaderboardResponse = await fetch(`${url}?action=leaderboard`);
+            if (leaderboardResponse.ok) {
+                const data = await leaderboardResponse.json();
+                if (data.status === 'ok') {
+                    sheetLeaderboard = data.leaderboard || [];
+                }
+            }
+            
+            // Load missions
+            const missionsResponse = await fetch(`${url}?action=missions`);
+            if (missionsResponse.ok) {
+                const data = await missionsResponse.json();
+                if (data.status === 'ok') {
+                    sheetMissions = data.missions || {};
+                }
+            }
+
+            // Load events
+            const eventsResponse = await fetch(`${url}?action=events`);
+            if (eventsResponse.ok) {
+                const data = await eventsResponse.json();
+                if (data.status === 'ok') {
+                    sheetEvents = data.events || [];
+                }
+            }
+        } catch (error) {
+            console.warn('Error loading sheet data:', error);
+            // Fallback to local data if sheet fails
+        }
+    }
+
+    // Refresh sheet data periodically
+    function startDataRefresh() {
+        loadSheetData();
+        // Refresh every 5 minutes
+        setInterval(loadSheetData, 5 * 60 * 1000);
     }
 
     function goToStep(stepId) {
@@ -2105,6 +2783,8 @@
     }
 
     // Modal functions
+    let duplicateEmailModalCallback = null;
+
     function openPrivacyModal() {
         document.getElementById('privacyModal').style.display = 'block';
     }
@@ -2113,11 +2793,36 @@
         document.getElementById('privacyModal').style.display = 'none';
     }
 
+    function showDuplicateEmailModal(message, callback = null) {
+        const modal = document.getElementById('duplicateEmailModal');
+        const messageEl = document.getElementById('duplicateEmailModalMessage');
+        if (!modal || !messageEl) return;
+        messageEl.textContent = message;
+        duplicateEmailModalCallback = callback;
+        modal.style.display = 'block';
+    }
+
+    function closeDuplicateEmailModal() {
+        const modal = document.getElementById('duplicateEmailModal');
+        if (!modal) return;
+        modal.style.display = 'none';
+        if (typeof duplicateEmailModalCallback === 'function') {
+            const cb = duplicateEmailModalCallback;
+            duplicateEmailModalCallback = null;
+            cb();
+        }
+    }
+
+    function confirmDuplicateEmailModal() {
+        closeDuplicateEmailModal();
+    }
+
     // Close modal when clicking outside
     window.onclick = function(event) {
         const privacyModal = document.getElementById('privacyModal');
         const missionsModal = document.getElementById('missionsModal');
         const profileModal = document.getElementById('profileModal');
+        const duplicateModal = document.getElementById('duplicateEmailModal');
         
         if (event.target == privacyModal) {
             privacyModal.style.display = 'none';
@@ -2128,6 +2833,9 @@
         if (event.target == profileModal) {
             closeProfileModal();
         }
+        if (event.target == duplicateModal) {
+            closeDuplicateEmailModal();
+        }
     }
 
     // Close modal with ESC key
@@ -2136,6 +2844,7 @@
             closePrivacyModal();
             closeMissionsModal();
             closeProfileModal();
+            closeDuplicateEmailModal();
         }
     });
 
@@ -2355,7 +3064,7 @@
         });
 
         // Registro inicial - Form submit
-        document.getElementById('crewForm').addEventListener('submit', (e) => {
+        document.getElementById('crewForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const email = document.getElementById('email').value.trim();
@@ -2370,7 +3079,10 @@
             const prevErrors = document.querySelectorAll('.error-message');
             prevErrors.forEach(err => err.remove());
             
-            // Validar email (formato real)
+            setCrewFormLoading(true);
+            
+            try {
+                // Validar email (formato real)
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             let emailValid = true;
             if (email && !emailRegex.test(email)) {
@@ -2386,16 +3098,34 @@
                 }
             }
             
-            // Validar duplicados (solo email y teléfono)
-            let emailExists = false;
+            // Validar duplicados (local y Google Sheets)
+            let emailExistsLocal = false;
+            let emailExistsSheets = false;
+            let existingUser = null;
             let phoneExists = false;
             
             if (email) {
-                emailExists = database.some(u => u.email.toLowerCase() === email.toLowerCase());
+                emailExistsLocal = database.some(u => u.email.toLowerCase() === email.toLowerCase());
+                
+                // Check against Google Sheets
+                try {
+                    const sheetsResult = await validateEmailWithSheets(email);
+                    emailExistsSheets = sheetsResult.exists;
+                    existingUser = sheetsResult.user;
+                } catch (error) {
+                    console.warn('Error checking email in sheets:', error);
+                    // Continue with local validation only
+                }
             }
             
             if (phone) {
                 phoneExists = database.some(u => u.telefono === phone);
+            }
+            
+            // Handle existing email from Sheets
+            if (emailExistsSheets) {
+                showDuplicateEmailModal('El email ya está registrado en el sistema. Por favor usa otro email para continuar.');
+                return;
             }
             
             // Mostrar errores
@@ -2416,11 +3146,11 @@
                 phoneInput.parentNode.appendChild(errorMsg);
             }
             
-            if (emailExists) {
+            if (emailExistsLocal) {
                 emailInput.classList.add('error');
                 const errorMsg = document.createElement('div');
                 errorMsg.className = 'error-message';
-                errorMsg.textContent = '⚠️ Este email ya está registrado';
+                errorMsg.textContent = '⚠️ Este email ya está registrado localmente';
                 emailInput.parentNode.appendChild(errorMsg);
             }
             
@@ -2432,7 +3162,7 @@
                 phoneInput.parentNode.appendChild(errorMsg);
             }
             
-            if (!emailValid || !phoneValid || emailExists || phoneExists) {
+            if (!emailValid || !phoneValid || emailExistsLocal || emailExistsSheets || phoneExists) {
                 return;
             }
             
@@ -2457,6 +3187,9 @@
                 fecha: new Date().toLocaleString()
             };
             goToStep(2);
+        } finally {
+            setCrewFormLoading(false);
+        }
         });
     });
 
@@ -2499,12 +3232,28 @@
         saveToDB(currentSession);
 
         // try to send to Google Sheets
+        let registrationResponse;
         try {
             if (SHEET_WEBAPP_URL && !SHEET_WEBAPP_URL.includes('PASTE_YOUR')) {
-                await postToSheet(currentSession);
+                registrationResponse = await postToSheet(currentSession);
                 console.log('Datos sincronizados a Google Sheet');
             }
-        } catch (e) { console.warn('Failed to post to sheet', e); }
+        } catch (e) { 
+            console.warn('Failed to post to sheet', e);
+            if (e.message.includes('Email ya registrado')) {
+                database = database.filter(u => u.id !== currentSession.id);
+                localStorage.setItem('gula_crew_db', JSON.stringify(database));
+                showDuplicateEmailModal('Este email ya está registrado en el sistema. Por favor usa otro email para registrarte.', () => goToStep(1));
+                return;
+            }
+        }
+
+        if (registrationResponse && registrationResponse.status === 'email_exists') {
+            database = database.filter(u => u.id !== currentSession.id);
+            localStorage.setItem('gula_crew_db', JSON.stringify(database));
+            showDuplicateEmailModal('Este email ya está registrado en el sistema. Por favor usa otro email para registrarte.', () => goToStep(1));
+            return;
+        }
 
         // Send email with code and discount
         try {
@@ -2573,21 +3322,34 @@
     }
 
     async function findMemberByCode(code) {
-        const localMatch = database.find(member => member.id === code);
-        if (localMatch) return localMatch;
-
+        // SIEMPRE busca primero en el Google Sheet
         try {
             const url = new URL(getWebhookUrl());
             url.searchParams.set('memberCode', code);
+            console.log('🔍 Buscando código:', code);
+            console.log('📡 URL de consulta:', url.toString());
+            
             const response = await fetch(url.toString(), { method: 'GET' });
-            if (!response.ok) return null;
+            console.log('📊 Response status:', response.status);
+            
+            if (!response.ok) {
+                console.warn('Sheet query failed:', response.status);
+                return null;
+            }
+            
             const data = await response.json();
+            console.log('📥 Response data:', data);
+            
             if (data.status === 'ok' && Array.isArray(data.members) && data.members.length) {
+                console.log('✅ Miembro encontrado en Sheet:', data.members[0]);
                 return data.members[0];
             }
+            
+            console.warn('⚠️ No se encontraron miembros con código:', code);
         } catch (e) {
-            console.warn('Buscar miembro en hoja falló:', e);
+            console.error('❌ Error buscando en Sheet:', e);
         }
+        console.warn('❌ Código no encontrado:', code);
         return null;
     }
 
@@ -2657,10 +3419,56 @@
         closeStoresDropdown();
         
         document.getElementById('missionsModal').style.display = 'block';
+        generateMissions();
     }
 
     function closeMissionsModal() {
         document.getElementById('missionsModal').style.display = 'none';
+    }
+
+    function generateMissions() {
+        const missionsList = document.getElementById('missionsList');
+        if (!missionsList) return;
+        
+        const missionTypes = ['Misiones Semanales', 'Misiones Flash', 'Misiones de Comunidad'];
+        let hasMissions = false;
+        
+        missionsList.innerHTML = '';
+        
+        missionTypes.forEach(type => {
+            const missions = sheetMissions[type] || [];
+            if (missions.length > 0) {
+                hasMissions = true;
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'mission-category';
+                categoryDiv.innerHTML = `<h3>${type.toUpperCase()}</h3>`;
+                
+                missions.forEach(mission => {
+                    // Determinar clase CSS para el badge según el tipo
+                    let badgeClass = 'comunidad'; // default
+                    if (mission.type === 'Misiones Semanales') badgeClass = 'semanales';
+                    else if (mission.type === 'Misiones Flash') badgeClass = 'flash';
+                    
+                    const missionItem = document.createElement('div');
+                    missionItem.className = 'mission-item';
+                    missionItem.innerHTML = `
+                        <div class="mission-type-badge ${badgeClass}">${mission.type.replace('Misiones ', '')}</div>
+                        <h4>${mission.title}</h4>
+                        <p class="mission-description">${mission.description}</p>
+                        <div class="mission-reward">+${mission.points} pts</div>
+                        <div class="mission-progress">Progreso: 0/1</div>
+                        <button class="btn-mission" onclick="completeMission('${mission.id}')">Marcar como completada</button>
+                    `;
+                    categoryDiv.appendChild(missionItem);
+                });
+                
+                missionsList.appendChild(categoryDiv);
+            }
+        });
+        
+        if (!hasMissions) {
+            missionsList.innerHTML = '<p style="text-align: center; color: #ccc;">No hay misiones disponibles en este momento.</p>';
+        }
     }
 
     function handleProfileClick() {
@@ -2726,7 +3534,7 @@
         }
     }
 
-    function saveEmail() {
+    function saveEmail() {q
         const user = getCurrentUser();
         if (!user) return alert('Usuario no encontrado');
 
@@ -2881,8 +3689,11 @@
         const leaderboardList = document.getElementById('leaderboardList');
         if (!leaderboardList) return;
         
+        // Use sheet data if available, otherwise fallback to local
+        const data = sheetLeaderboard.length > 0 ? sheetLeaderboard : database;
+        
         // Sort users by points (highest first)
-        const sorted = [...database].sort((a, b) => (b.puntos || 0) - (a.puntos || 0));
+        const sorted = [...data].sort((a, b) => (b.puntos || 0) - (a.puntos || 0));
         
         leaderboardList.innerHTML = '';
         
@@ -2957,54 +3768,15 @@
         const eventsList = document.getElementById('eventsList');
         if (!eventsList) return;
         
-        const events = [
-            {
-                id: 'event_1',
-                title: 'Degustación de Nuevos Sabores',
-                date: '15/04/2025',
-                time: '18:00',
-                location: 'Casa Gula Centro',
-                capacity: 30,
-                registered: 12
-            },
-            {
-                id: 'event_2',
-                title: 'Noche de High Crew Exclusiva',
-                date: '22/04/2025',
-                time: '20:00',
-                location: 'Casa Gula Premium',
-                capacity: 20,
-                registered: 18,
-                minLevel: 'CREW'
-            },
-            {
-                id: 'event_3',
-                title: 'Taller: Cata de Productos',
-                date: '28/04/2025',
-                time: '19:00',
-                location: 'Casa Gula Centro',
-                capacity: 25,
-                registered: 8
-            },
-            {
-                id: 'event_4',
-                title: 'Reunión Founders - Abril',
-                date: '30/04/2025',
-                time: '19:30',
-                location: 'Casa Gula Founders',
-                capacity: 10,
-                registered: 6,
-                minLevel: 'FOUNDERS'
-            }
-        ];
+        if (sheetEvents.length === 0) {
+            eventsList.innerHTML = '<p style="text-align: center; color: #ccc;">No hay eventos disponibles en este momento.</p>';
+            return;
+        }
         
         const currentUser = getCurrentUser();
         eventsList.innerHTML = '';
         
-        events.forEach(event => {
-            const isFull = event.registered >= event.capacity;
-            const canRegister = !isFull && (!event.minLevel || isLevelEligible(currentUser, event.minLevel));
-            
+        sheetEvents.forEach(event => {
             const eventEl = document.createElement('div');
             eventEl.style.cssText = `
                 padding: 16px;
@@ -3014,19 +3786,13 @@
                 border-left: 4px solid #FF8C00;
             `;
             
-            let restrictionNote = '';
-            if (event.minLevel) {
-                restrictionNote = `<div style="font-size: 11px; color: #FF8C00; margin-bottom: 8px;">⭐ Solo para ${event.minLevel} en adelante</div>`;
-            }
-            
             eventEl.innerHTML = `
                 <div style="font-weight: bold; color: #333; margin-bottom: 6px;">${event.title}</div>
-                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">📅 ${event.date} a las ${event.time}</div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 4px;">📅 ${event.date}</div>
                 <div style="font-size: 13px; color: #666; margin-bottom: 8px;">📍 ${event.location}</div>
-                ${restrictionNote}
-                <div style="font-size: 12px; color: #999; margin-bottom: 8px;">Registrados: ${event.registered}/${event.capacity} ${isFull ? '(LLENO)' : ''}</div>
-                <button onclick="reserveEvent('${event.id}')" style="padding: 8px 16px; background: ${canRegister ? '#FF8C00' : '#ccc'}; color: white; border: none; border-radius: 6px; cursor: ${canRegister ? 'pointer' : 'not-allowed'}; font-weight: bold;" ${!canRegister ? 'disabled' : ''}>
-                    ${isFull ? 'EVENTO LLENO' : canRegister ? 'RESERVAR' : 'SIN ACCESO'}
+                <div style="font-size: 12px; color: #999; margin-bottom: 8px;">+${event.points} puntos por asistir</div>
+                <button onclick="reserveEvent('${event.id}')" style="padding: 8px 16px; background: #FF8C00; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">
+                    RESERVAR
                 </button>
             `;
             
@@ -3322,6 +4088,8 @@
     }
 
     function getCurrentUser() {
+        // Reset for testing - no stored users
+        localStorage.removeItem('currentUser');
         const stored = localStorage.getItem('currentUser');
         if (stored) {
             try {
@@ -3376,8 +4144,12 @@
     // POST helper
     async function postToSheet(data){
         const url = getWebhookUrl();
+        console.log('postToSheet called with URL:', url);
+        console.log('postToSheet data:', data);
+        
         if (!url || url.includes('PASTE_YOUR')) throw new Error('WebApp URL not configured');
-        // Send data in array format matching sheet order: NOMBRE, APELLIDO, EMAIL, CODIGO POSTAL, TELEFONO, PUNTAJE, INSTAGRAM, USER CODE, FECHA, MARKETING CONSENT
+
+        // Send data in array format matching sheet order: NOMBRE, APELLIDO, EMAIL, CODIGO POSTAL, TELEFONO, PUNTAJE, INSTAGRAM, MEMBER_ID, TIMESTAMP
         const payload = [
             data.nombre,
             data.apellido,
@@ -3386,57 +4158,122 @@
             data.telefono || 'NO',
             data.puntos,
             data.instagramFollow,
-            data.fecha,
-            data.id,
+            data.id,  // MemberID at index 7
+            data.fecha,  // Timestamp at index 8
             data.marketingConsent ? 'SI' : 'NO'
         ];
-        const res = await fetch(url, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
-        // With no-cors, can't read response, assume success
-        return { status: 'ok' };
+        
+        console.log('postToSheet payload:', payload);
+
+        // Try POST first
+        try {
+            console.log('Attempting POST to:', url);
+            const res = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            console.log('POST response status:', res.status);
+            const responseData = await res.json();
+            console.log('POST response data:', responseData);
+            
+            if (!res.ok) {
+                // Don't throw error for email_exists, return the response
+                if (responseData.status === 'email_exists') {
+                    console.log('Email already exists');
+                    return responseData;
+                }
+                throw new Error(responseData.message || 'Error en el registro');
+            }
+
+            console.log('POST successful');
+            return responseData;
+        } catch (postError) {
+            console.warn('POST failed:', postError);
+            console.warn('Trying GET fallback...');
+
+            // Fallback to GET request
+            const params = new URLSearchParams({
+                action: 'register',
+                nombre: payload[0] || '',
+                apellido: payload[1] || '',
+                email: payload[2] || '',
+                zip: payload[3] || '',
+                telefono: payload[4] || '',
+                puntos: payload[5] || 0,
+                instagram: payload[6] || 'NO',
+                memberId: payload[7] || '',
+                fecha: payload[8] || ''
+            });
+
+            const getUrl = `${url}?${params.toString()}`;
+            console.log('GET URL:', getUrl.substring(0, 100) + '...');
+            
+            try {
+                const res = await fetch(getUrl);
+                console.log('GET response status:', res.status);
+                const responseData = await res.json();
+                console.log('GET response data:', responseData);
+                
+                if (!res.ok) {
+                    // Don't throw error for email_exists, return the response
+                    if (responseData.status === 'email_exists') {
+                        console.log('Email already exists (GET fallback)');
+                        return responseData;
+                    }
+                    throw new Error('Both POST and GET failed');
+                }
+
+                console.log('GET successful');
+                return responseData;
+            } catch (getError) {
+                console.error('GET fallback also failed:', getError);
+                throw getError;
+            }
+        }
+    }
+
+    // Validate email against Google Sheets
+    async function validateEmailWithSheets(email) {
+        if (!email || !SHEET_WEBAPP_URL || SHEET_WEBAPP_URL.includes('PASTE_YOUR')) {
+            return { exists: false, user: null };
+        }
+
+        try {
+            const params = new URLSearchParams({
+                action: 'query',
+                email: email.toLowerCase().trim()
+            });
+
+            const response = await fetch(`${SHEET_WEBAPP_URL}?${params.toString()}`);
+            const data = await response.json();
+
+            if (data.status === 'ok' && data.members && data.members.length > 0) {
+                return { exists: true, user: data.members[0] };
+            }
+
+            return { exists: false, user: null };
+        } catch (error) {
+            console.warn('Error validating email with sheets:', error);
+            // If we can't check with sheets, allow to continue (fail open)
+            return { exists: false, user: null };
+        }
     }
 
     // Send reward email via Google Apps Script
     async function sendRewardEmail(memberData) {
         try {
-            console.log('📧 Enviando email al servidor...');
+            console.log('📧 Email será enviado automáticamente por el servidor');
             console.log('Datos del miembro:', memberData);
             
-            // Create email payload for Google Apps Script
-            const emailPayload = {
-                email: memberData.email,
-                nombre: memberData.nombre,
-                memberCode: memberData.id,
-                puntos: memberData.puntos,
-                fecha: memberData.fecha
-            };
+            // El email se envía desde registerMemberViaGet en Google Apps Script
+            // No necesitamos hacer POST adicional aquí
             
-            console.log('📤 Payload a enviar:', JSON.stringify(emailPayload));
-            
-            // Send to Google Apps Script webhook
-            const webhookUrl = getWebhookUrl();
-            console.log('🔗 Webhook URL:', webhookUrl);
-            
-            const response = await fetch(webhookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(emailPayload)
-            });
-            
-            const responseText = await response.text();
-            console.log('✅ Respuesta del servidor:', response.status, responseText);
-            
-            return { status: 'email_sent', email: memberData.email };
+            return { status: 'email_queued', email: memberData.email };
             
         } catch (error) {
             console.error('❌ Error en sendRewardEmail:', error.message);
-            console.error('Stack:', error);
             return { status: 'email_failed', error: error.message };
         }
     }
@@ -3519,6 +4356,39 @@
     }
 
     function escapeHtml(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    // Initialize data loading
+    startDataRefresh();
+
+    let selectedVoteOption = null;
+
+    function selectVoteOption(element) {
+        document.querySelectorAll('.voting-section .option').forEach(option => {
+            option.classList.remove('selected');
+        });
+        element.classList.add('selected');
+        selectedVoteOption = element.dataset.option || null;
+    }
+
+    function submitVote() {
+        if (!selectedVoteOption) {
+            return alert('Selecciona una opción antes de votar.');
+        }
+        alert('¡Gracias por votar! Tu voto por "' + selectedVoteOption + '" ha sido registrado.');
+        // Update percentages
+        const options = document.querySelectorAll('.voting-section .option');
+        options.forEach(option => {
+            const fill = option.querySelector('.progress-fill');
+            const perc = option.querySelector('.percentage');
+            if (option.dataset.option === selectedVoteOption) {
+                fill.style.width = '50%';
+                perc.textContent = '50%';
+            } else {
+                fill.style.width = '25%';
+                perc.textContent = '25%';
+            }
+        });
+    }
 </script>
 
 </body>
